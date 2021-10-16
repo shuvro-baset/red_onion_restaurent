@@ -4,13 +4,19 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
+    const { handleEmailChange, handlePasswordChange, error, message, processLogin, handleResetPassword, handleGoogleSignIn, GithubSignInHandler} = useAuth()
 
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || '/shop';
-    const {user, handleEmailChange, handlePasswordChange, error, message, processLogin, handleResetPassword, handleGoogleSignIn, GithubSignInHandler} = useAuth()
+    const redirect_uri = location.state?.from || '/home';
     
-    
+    const googleLogin = (e) => {
+        e.preventDefault();
+        handleGoogleSignIn()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
     
     return (
         <Container>
@@ -37,7 +43,7 @@ const Login = () => {
                     <Link to="/registration" className="btn btn-primary">Register</Link>
                     <button onClick={handleResetPassword}  className="btn btn-primary">Reset Password</button>
                     <div className="mb-3">
-                        <button onClick={handleGoogleSignIn} className="btn btn-danger">sign-in with Google</button>
+                        <button onClick={googleLogin} className="btn btn-danger">sign-in with Google</button>
                         <button onClick={GithubSignInHandler} className="btn btn-warning">sign-in with Github</button>
                     </div>
                 </form>

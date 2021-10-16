@@ -3,7 +3,6 @@ import initializeAuthentication from '../Firebase/firebase.initialize';
 import {getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, signInWithEmailAndPassword, updateProfile,
        sendEmailVerification ,createUserWithEmailAndPassword ,sendPasswordResetEmail ,signOut ,onAuthStateChanged } 
         from "firebase/auth";
-import { useHistory, useLocation } from 'react-router';
 
 
 initializeAuthentication()
@@ -12,9 +11,6 @@ const auth = getAuth();
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const useFirebase = () => {
-  // const location = useLocation();
-  // const history = useHistory();
-  // const redirect_uri = location.state?.from || '/home';
 
 // use State method for loggedInUser
 const [user, setUser] = useState({})
@@ -23,33 +19,36 @@ const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 const [error, setError] = useState('');
 const [message, setMessage] = useState('');
-
+const [loading, setLoading] = useState(true)
 
 
 // Google signIn handler function.
 const handleGoogleSignIn = (e) => {
 
-    console.log("i am clicked");
-    e.preventDefault();
-    signInWithPopup(auth, googleProvider)
-    .then((result) => {
-      // history.push(redirect_uri);
+    // console.log("i am clicked");
+    // e.preventDefault();
+    // signInWithPopup(auth, googleProvider)
+    // .then((result) => {
+    //   // history.push(redirect_uri);
 
-        // destructuring user data.
-        const { displayName, email, photoURL } = result.user;
-        const loggedInUser = {
-            name: displayName,
-            email: email,
-            photo: photoURL
-    };
-    setUser(loggedInUser);
-    setMessage("Successfully logged in!");
-    setError("");
+    //     // destructuring user data.
+    //     const { displayName, email, photoURL } = result.user;
+    //     const loggedInUser = {
+    //         name: displayName,
+    //         email: email,
+    //         photo: photoURL
+    // };
+    // setUser(loggedInUser);
+    // setMessage("Successfully logged in!");
+    // setError("");
 
-  })
-    .catch(error => {
-        console.log(error.message);
-    })
+  // })
+  //   .catch(error => {
+  //       console.log(error.message);
+  //   })
+  return signInWithPopup(auth, googleProvider)
+            
+            .finally(() => { setLoading(false) });
   };
 
   
@@ -158,13 +157,19 @@ signOut(auth)
     })
 }
 // set user when user logged in. this is firebase default behavior that firebase can save the user if logged in.
+// observe whether user auth state changed or not
 useEffect(() => {
-  onAuthStateChanged(auth, user => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
           setUser(user);
       }
-  })
-}, []);
+      else {
+          setUser({});
+      }
+      setLoading(false);
+  });
+  return () => unsubscribe;
+}, [])
 
 
     return {
