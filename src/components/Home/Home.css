@@ -15,3 +15,12 @@
     height: 100%;
     width: 100%;
 }
+.menu-item{
+    text-decoration: none;
+    padding: 5px;
+    margin: 10px;
+    color: #000;
+}
+.menu-item:hover{
+    color: rgb(255, 0, 140);
+}

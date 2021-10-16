@@ -12,6 +12,7 @@ import Registration from './components/Registration/Registration'
 import initializeAuthentication from './Firebase/firebase.initialize';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Footer from './components/Footer/Footer';
 
 initializeAuthentication();
 
@@ -44,6 +45,7 @@ function App() {
             <NotFound></NotFound>
           </Route> 
         </Switch>
+      <Footer></Footer>
       </Router>
       </AuthProvider>
     </>
