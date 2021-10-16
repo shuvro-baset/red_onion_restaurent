@@ -9,9 +9,16 @@ import About from './components/About/About'
 import Services from './components/Services/Services';
 import NotFound from './components/NotFound/NotFound'
 import Registration from './components/Registration/Registration'
+import initializeAuthentication from './Firebase/firebase.initialize';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
+initializeAuthentication();
+
 function App() {
   return (
     <>
+      <AuthProvider>
       <Router>
       <NavBar></NavBar>
         <Switch>
@@ -21,12 +28,12 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/about">
+          <PrivateRoute path="/about">
             <About></About>
-          </Route>
-          <Route path="/services">
+          </PrivateRoute>
+          <PrivateRoute path="/services">
             <Services></Services>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -38,6 +45,7 @@ function App() {
           </Route> 
         </Switch>
       </Router>
+      </AuthProvider>
     </>
   );
 }
