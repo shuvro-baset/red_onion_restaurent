@@ -13,18 +13,18 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
-                    <NavLink to="/home">Home</NavLink>
-                    <NavLink to="/about">About</NavLink>
-                    <NavLink to="/services">Service</NavLink>
+                    <NavLink className="menu-item" to="/home">Home</NavLink>
+                    <NavLink className="menu-item" to="/about">About</NavLink>
+                    <NavLink className="menu-item" to="/services">Service</NavLink>
                 </Nav>
 
                 <Nav className="mr-auto">
-                    <NavLink to="/home"><i className="fas fa-shopping-cart"></i></NavLink>
+                    <NavLink  className="menu-item" to="/home"><i className="fas fa-shopping-cart"></i></NavLink>
                     { !user.email && 
-                        <NavLink  to="/login">Login</NavLink>
+                        <NavLink className="menu-item" to="/login">Login</NavLink>
                     }
                     { user.email && 
-                        <NavLink onClick={logout} to="/home" >LogOut</NavLink>
+                        <NavLink className="menu-item"  onClick={logout} to="/home" >LogOut</NavLink>
                     }
                 </Nav>
                 </Navbar.Collapse>

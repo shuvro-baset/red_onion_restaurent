@@ -16,15 +16,15 @@ const Home = () => {
                 <Col>
                     <Navbar>
                         <Nav className="mx-auto">
-                            <NavLink className="menu-item" to="/home">Home</NavLink>
-                            <NavLink className="menu-item" to="/about">About</NavLink>
-                            <NavLink className="menu-item" to="/services">Service</NavLink>
+                            <NavLink className="menu-item" to="/home">breakfast</NavLink>
+                            <NavLink className="menu-item" to="/about">lunch</NavLink>
+                            <NavLink className="menu-item" to="/services">dinner</NavLink>
                         </Nav>
                     </Navbar>
                 </Col>
             </Row>
             <Row>
-                
+
             </Row>
         </Container>
     );
