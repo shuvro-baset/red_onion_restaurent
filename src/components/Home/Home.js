@@ -20,9 +20,14 @@ const Home = () => {
         <Container fluid>
             <Row>
                 <div className="banner">
-                    <div className="d-flex justify-content-center align-items-center banner-text">
+                    <div className="d-flex flex-column justify-content-center align-items-center banner-text">
                         <h1>Best Food Waiting For Your Belly</h1>
+                        <div className="d-flex align-items-center justify-content-center search-input">
+                            <input type="email" placeholder="Enter Your Email Address" />
+                            <button>search</button>
+                        </div>
                     </div>
+                    
                 </div>
             </Row>
             <Row>
