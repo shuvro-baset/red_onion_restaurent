@@ -22,6 +22,7 @@ const SingleFood = () => {
     const title = details.title;
     const img = details.image;
     const description = details.description;
+    console.log(img);
     return (
         <Container>
             <Row className="my-5">
