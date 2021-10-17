@@ -7,7 +7,7 @@ import './NavBar.css'
 const NavBar = () => {
     const {user, logout} = useAuth();
     return (
-        <Navbar bg="white" expand="lg">
+        <Navbar sticky="top" bg="white" className="navBar" expand="lg">
             <Container>
                 <Navbar.Brand><img src={logo2} className="logo img-fluid" alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

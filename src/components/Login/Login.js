@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-
+import './Login.css'
+import logo from '../../Image/logo2.png'
 const Login = () => {
     const { handleEmailChange, handlePasswordChange, error, message, processLogin, handleResetPassword, handleGoogleSignIn, GithubSignInHandler} = useAuth()
 
@@ -19,10 +20,10 @@ const Login = () => {
     }
     
     return (
-        <Container>
+        <Container fluid className='bg-img'>
             <div className="d-flex justify-content-center align-items-center">
-            <div className='col-md-5 mt-5'>
-                <h2>Login system</h2>
+            <Col md={4} className='mt-5'>
+            <div><img src={logo} className="img-fluid my-5 p-3" alt="" /></div>
                 <form>
                     <div className="mb-3">
                         <label  className="form-label">Email address</label>
@@ -50,7 +51,7 @@ const Login = () => {
                         <button onClick={GithubSignInHandler} className="btn btn-warning">sign-in with Github</button>
                     </div>
                 </form>
-            </div>
+            </Col>
             
         </div>
         </Container>
