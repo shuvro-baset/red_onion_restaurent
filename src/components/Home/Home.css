@@ -24,3 +24,15 @@
 .menu-item:hover{
     color: rgb(255, 0, 140);
 }
+.abt-btn{
+    outline: none;
+    color: rgb(6, 116, 241);
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.fas{
+    color:rgb(255, 0, 140);
+    font-size: 18px;
+    margin-left: 10px;
+}
