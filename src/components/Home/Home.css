@@ -22,7 +22,8 @@
     color: #000;
 }
 .menu-item:hover{
-    color: rgb(255, 0, 140);
+    color: rgb(206, 3, 88);
+    cursor: pointer;
 }
 .search-input{
     width: 325px;
@@ -56,7 +57,7 @@
     font-size: 14px;
 }
 .fas{
-    color:rgb(255, 0, 140);
+    color:rgb(206, 3, 88);
     font-size: 18px;
     margin-left: 10px;
 }

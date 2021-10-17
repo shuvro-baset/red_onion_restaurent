@@ -39,10 +39,13 @@ const Login = () => {
                     {   message &&
                         <div className="row mb-3 text-success">{message}</div>
                     }
-                    <button onClick={processLogin} type="submit" className="btn btn-primary">Login</button>
-                    <Link to="/registration" className="btn btn-primary">Register</Link>
-                    <button onClick={handleResetPassword}  className="btn btn-primary">Reset Password</button>
-                    <div className="mb-3">
+                    <div className='d-flex justify-content-evenly my-2'>
+                        <button onClick={processLogin} type="submit" className="btn btn-primary">Login</button>
+                        <Link to="/registration" className="btn btn-primary">Register</Link>
+                        <button onClick={handleResetPassword}  className="btn btn-primary">Reset Password</button>
+
+                    </div>
+                    <div className="d-flex justify-content-evenly my-2">
                         <button onClick={googleLogin} className="btn btn-danger">sign-in with Google</button>
                         <button onClick={GithubSignInHandler} className="btn btn-warning">sign-in with Github</button>
                     </div>
