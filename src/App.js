@@ -13,6 +13,7 @@ import initializeAuthentication from './Firebase/firebase.initialize';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Footer from './components/Footer/Footer';
+import SingleFood from './components/SingleFood/SingleFood';
 
 initializeAuthentication();
 
@@ -35,6 +36,9 @@ function App() {
           <PrivateRoute path="/services">
             <Services></Services>
           </PrivateRoute>
+          <Route path="/food/:id">
+            <SingleFood></SingleFood>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const FoodItem = ({ image, title, description, price , type}) => { 
+const FoodItem = ({ id, image, title, description, price , type}) => { 
     return (
         <Col md={4}>
             <Card>
@@ -10,6 +11,7 @@ const FoodItem = ({ image, title, description, price , type}) => {
                 <p>{description.slice(0,100)}</p>
                 <p>{price}</p>
                 <button>{type}</button>
+                <Link to={`/food/${id}`}>click me</Link>
             </Card>
         </Col>
     );
