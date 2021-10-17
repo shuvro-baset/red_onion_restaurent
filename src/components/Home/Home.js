@@ -68,7 +68,7 @@ const Home = () => {
                             <Col md={10}>
                                 <h3>Fast Delivery</h3>
                                 <p>Keep your system in a sync with automated web hook based notifications each time link is paid and how we dream about out future.</p>
-                                <button className="abt-btn">See more <i class="fas fa-arrow-circle-right"></i></button>
+                                <button className="abt-btn">See more <i className="fas fa-arrow-circle-right"></i></button>
                             </Col>
                         </Row>
                     </Card>
@@ -83,7 +83,7 @@ const Home = () => {
                             <Col md={10}>
                                 <h3>Fast Delivery</h3>
                                 <p>Keep your system in a sync with automated web hook based notifications each time link is paid and how we dream about out future.</p>
-                                <button className="abt-btn">See more <i class="fas fa-arrow-circle-right"></i></button>
+                                <button className="abt-btn">See more <i className="fas fa-arrow-circle-right"></i></button>
                             </Col>
                         </Row>
                     </Card>
@@ -98,7 +98,7 @@ const Home = () => {
                             <Col md={10}>
                                 <h3>Fast Delivery</h3>
                                 <p>Keep your system in a sync with automated web hook based notifications each time link is paid and how we dream about out future.</p>
-                                <button className="abt-btn">See more <i class="fas fa-arrow-circle-right"></i></button>
+                                <button className="abt-btn">See more <i className="fas fa-arrow-circle-right"></i></button>
                             </Col>
                         </Row>
                     </Card>
