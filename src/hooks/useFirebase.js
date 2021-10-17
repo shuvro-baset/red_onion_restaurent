@@ -25,27 +25,6 @@ const [loading, setLoading] = useState(true)
 // Google signIn handler function.
 const handleGoogleSignIn = (e) => {
 
-    // console.log("i am clicked");
-    // e.preventDefault();
-    // signInWithPopup(auth, googleProvider)
-    // .then((result) => {
-    //   // history.push(redirect_uri);
-
-    //     // destructuring user data.
-    //     const { displayName, email, photoURL } = result.user;
-    //     const loggedInUser = {
-    //         name: displayName,
-    //         email: email,
-    //         photo: photoURL
-    // };
-    // setUser(loggedInUser);
-    // setMessage("Successfully logged in!");
-    // setError("");
-
-  // })
-  //   .catch(error => {
-  //       console.log(error.message);
-  //   })
   return signInWithPopup(auth, googleProvider)
             
             .finally(() => { setLoading(false) });

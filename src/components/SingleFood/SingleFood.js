@@ -14,7 +14,7 @@ const SingleFood = () => {
         fetch('/foods.json')
             .then(res => res.json())
             .then(data => setDetails(data.find(item => foodId === item.id)))
-    } ,[])
+    } ,[foodId])
 
    const {title, description, image, price} = details;
     return (
